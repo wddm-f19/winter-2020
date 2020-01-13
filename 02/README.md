@@ -1,5 +1,10 @@
 # Class basics
 
+## Video recording
+
+The lesson can be reviewed here: <https://ca-lti.bbcollab.com/recording/fbbc0892e9d0430fb3aeb843af901e39>
+
+
 ## Notes
 
 ### Object-oriented terms
