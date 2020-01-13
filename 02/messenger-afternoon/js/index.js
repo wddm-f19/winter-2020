@@ -60,13 +60,6 @@ If you complete the above...
 5. Modify the renderMessages function to call on the new getMessageAsHtml() function
 */
 
-/* 
-To take home:
-1. Wrap the application data so far, into a class called Messenger
-2. Receive a reference to the DOM element ul#messages as a parameter to the constructor
-3. Create a User class based on what you think it needs to hold (properties) and do (methods)
-*/
-
 
 
 /* 
