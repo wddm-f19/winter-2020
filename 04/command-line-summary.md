@@ -16,11 +16,14 @@
 A summary of the most useful commands for our purposes. Numerous _summary_ documents can be found for [all of the available unix commands](http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/).
 
 ### Miscellaneous
+
 - `whoami` Your username
 - `date` Current date
 - `clear` Clears the terminal
+- `man [command]` Read the manual for any command
 
 ### File system
+
 - `pwd` Present working director (path)
 - `ls -l` List the files in the folder (`-l` = long form)
 - `cd [path/folder]` Change directory
@@ -33,55 +36,30 @@ A summary of the most useful commands for our purposes. Numerous _summary_ docum
 - `rm [path/file]` Remove a file
 - `rm -r [path/folder]` Remove a folder an all containing files (`-r` = recursively)
 
-### Writing content (to files)
-- `echo "[content]"` Output to the command line
-- `echo "[content]" > [path/file]` Write (replace) file content (creates the file if it doesn't exist)
-- `echo "[content]" >> [path/file]` Append file content (creates the file if it doesn't exist)
-- Write (replace) file content (creates the file if it doesn't exist)
-   ```
+### Output content
+
+- `echo "[output]"` Write output to the terminal ("standard output")
+- `cat [path/file]` Write file content to the terminal ("standard output")
+
+#### Input/Output redirection (`>`, `>>`, `<<`)
+- `[output] > [path/file]` Overwrites an entire file with output content
+- `[output] >> [path/file]` Appends output content to the end of a file
+- `[path/file] << [delimiter]` Writes to a file from input content until the delimiter
+*Note*: Both commands will create a new file if it does not already exist.
+
+Some example uses of `>`, `>>` and `<<` with `echo` and `cat`:
+- `echo "Hello world" > [path/file]` Write (replace) the file content with "Hello world"
+- `echo "Hello world" >> [path/file]` Append "Hello world" to the end of the file
+- Writes (replaces) file content with "Hello world" (creates the file if it doesn't exist)
+   ```shell
    cat > [path/file] << EOF
-   [content]
+   Hello world
    EOF
    ```
-- Append file content (creates the file if it doesn't exist)
-   ```
+- Append "Hello world" to the end of file content (creates the file if it doesn't exist)
+   ```shell
    cat >> [path/file] << EOF
-   [content]
+   Hello world
    EOF
    ```
-
-### 
-- `sh [path/file]`
-- `alias [name]='[command]'`
-- `unalias [name]`
-- `man [command]` Read the manual for any command
-
-
-## Shell commands
-
-Read input
-```shell
-read -rp "Project name: " name
-```
-
-File input
-```shell
-```
-
-Operators
-```shell
-```
-
-Condition statements
-```shell
-if [ condition ]
-then
-
-else
-
-fi
-```
-
-While loop
-```shell
-```
+*Note*: The `[delimiter]` can be any string of text (EOF just stand for "end of file")
